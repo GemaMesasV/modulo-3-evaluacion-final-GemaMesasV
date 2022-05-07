@@ -3,7 +3,7 @@ import '../styles/Reset.scss';
 import { useEffect, useState } from 'react';
 // import { Route, Routes } from 'react-router-dom';
 // import { matchPath, useLocation } from 'react-router';
-import MovieSceneList from './MovieSceneList'
+import MovieSceneList from './MovieSceneList';
 
 // Función para quitar valores repetidos
 function onlyUnique(value, index, self) {
