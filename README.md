@@ -73,7 +73,7 @@ detalle aparecerá:
   **< form />**
 - Si estando en el campo de filtrado pulsamos intro debéis impedir que el navegador navegue o cambie
   la ruta sin querer.
-  > **_Nota:_** Tras implementar el punto de añadir la etiqueta **< form />** al **_input_** de texto me di cuenta de que tenía que usar el evento **PreventDefault** solo para corregir lo que acababa de implementar con el uso del propio **< form />** que, sin el uso de esta etiqueta, no ocurría. Por ello finalmente tomé la decisión de no incluir en mi proyecto la etiqueta **< form />**.
+  > **_Nota personal de la autora:_** Tras implementar el punto de añadir la etiqueta **< form />** al **_input_** de texto me di cuenta de que tenía que usar el evento **PreventDefault** solo para corregir lo que acababa de implementar con el uso del propio **< form />** que, sin el uso de esta etiqueta, no ocurría. Por ello finalmente tomé la decisión de no incluir en mi proyecto la etiqueta **< form />**.
 - Si se busca por un texto (por ejemplo: "ZZZ") y no hay ninguna escena de película que coincida con
   dicho texto se debe mostrar un mensaje del tipo "No hay ninguna nombre de película que coincida
   con la palabra ZZZ"

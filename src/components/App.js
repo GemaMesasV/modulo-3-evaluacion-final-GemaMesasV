@@ -1,11 +1,14 @@
 import "../styles/App.scss";
 import "../styles/Reset.scss";
+
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-// import { matchPath, useLocation } from 'react-router';
+
 import MovieSceneList from "./MovieSceneList";
 import MovieSceneDetail from "./MovieSceneDetail";
 import MovieFilters from "./MovieFilters";
+
+import localStorage from "../services/localStorage";
 
 // Función para quitar valores repetidos
 function onlyUnique(value, index, self) {
@@ -14,9 +17,8 @@ function onlyUnique(value, index, self) {
 
 function App(props) {
   const [dataMovies, setDataMovies] = useState([]);
-  const [filterMovie, setFilterMovie] = useState("");
+  const [filterMovieTitle, setFilterMovieTitle] = useState(localStorage.get("filterMovieTitle", ""));
   const [filterMovieYear, setFilterMovieYear] = useState("");
-
   const yearList = dataMovies
     .map((movie) => movie.year)
     .filter(onlyUnique)
@@ -34,7 +36,8 @@ function App(props) {
 
   // Función para buscar por película
   function handleChangeTitle(e) {
-    setFilterMovie(e.target.value);
+    localStorage.set("filterMovieTitle", e.target.value)
+    setFilterMovieTitle(e.target.value);
   }
 
   // Función para buscar por película
@@ -43,9 +46,9 @@ function App(props) {
   }
 
   //Aplicamos filtros
-  if (filterMovie) {
+  if (filterMovieTitle) {
     filteredMovieList = filteredMovieList.filter((movie) =>
-      movie.movie.toLowerCase().includes(filterMovie.toLowerCase())
+      movie.movie.toLowerCase().includes(filterMovieTitle.toLowerCase())
     );
   }
 
@@ -63,7 +66,7 @@ function App(props) {
           element={(
             <>
               <MovieFilters
-                filterMovie={filterMovie}
+                filterMovie={filterMovieTitle}
                 filterMovieYear={filterMovieYear}
                 yearList={yearList}
                 handleChangeTitle={handleChangeTitle}
