@@ -16,7 +16,7 @@
 En primer lugar, vamos a realizar una web con el listado de 50 escenas donde el actor Owen Wilson ha
 dicho 'wow'.
 Para eso, vamos a utilizar el servicio de esta [API](https://owen-wilson-wow-api.herokuapp.com/wows/random?results=50/), que nos devuelve información de 50 escenas de películas aleatorias. Sobre cada una, vamos a
-mostrar al menos:
+mostrar:
 
 - Poster **(poster)**
 - Película **(movie)**
@@ -29,19 +29,18 @@ Ahora que ya tenemos el listado de escenas, la segunda parte consiste en realiza
 película. Para eso, añadimos un **_input_** a la interfaz, de forma que al ir escribiendo un nombre queden en la
 interfaz solo las escenas cuya película contiene las letras escritas.
 
-> **_Nota:_** en principio no es necesario tener en cuenta si las letras están en mayúscula / minúscula para
-> la búsqueda, pero si queréis añadir esta mejora pues genial.
+> **_Nota:_** más adelante se pedirá que se pueda buscar independientemente de si escribimos el nombre en mayúsculas o minúsculas.
 
 ### 3. **Filtrado por año**
 
 Ahora que ya tenemos el listado de escenas en pantalla, y filtrado por nombre de la película donde aparece
 la escena, la siguiente parte consiste en filtrar el listado por año de la película.
 Para eso, añadimos un **_select_** a la interfaz, de forma que al seleccionar un año queden en la interfaz solo las escenas que
-coincidan con el año seleccionado
+coincidan con el año seleccionado.
 
 > **_Nota:_**
 >
-> - Por defecto, cuando carga la página debe aparecer **todos.**
+> - Por defecto, cuando carga la página deben aparecer **todas las películas.**
 > - Obtén los años de las películas del listado.
 
 ### 4. **Componentes de la aplicación**
@@ -55,7 +54,7 @@ La aplicación debe tener los siguientes componentes como mínimo:
 
 ### 5. **Detalle de cada escena**
 
-Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de una escena, su información
+Vamos a implementar una funcionalidad: al hacer clic sobre la tarjeta de una escena, su información
 aparecerá a pantalla completa. Para hacer esto usaremos rutas y React Router DOM. En la pantalla de
 detalle aparecerá:
 
@@ -74,38 +73,39 @@ detalle aparecerá:
   **< form />**
 - Si estando en el campo de filtrado pulsamos intro debéis impedir que el navegador navegue o cambie
   la ruta sin querer.
-- Si se busca por un texto por ejemplo "ZZZ" y no hay ninguna escena de película que coincida con
+  **_Nota personal:_** Tras implementar el punto de añadir la etiqueta **< form />** al **_input_** de texto me di cuenta de que tenía que usar el evento **PreventDefault** solo para corregir lo que acababa de implementar con el uso del propio **< form />** que, sin el uso de esta etiqueta, no ocurría. Por ello finalmente tomé la decisión de no incluir en mi proyecto la etiqueta **< form />** 
+- Si se busca por un texto (por ejemplo: "ZZZ") y no hay ninguna escena de película que coincida con
   dicho texto se debe mostrar un mensaje del tipo "No hay ninguna nombre de película que coincida
   con la palabra ZZZ"
-- El filtro debe filtrar independientemente de que la usuaria introduzca el texto en mayúsuclas o
+- El filtro debe filtrar independientemente de que la usuaria introduzca el texto en mayúsculas o
   minúsculas.
-- Al entrar en el detalle de una escena y a continuación pulsas atrás, el campo de texto debe mostrar el
+- Al entrar en el detalle de una escena y a continuación pulsar atrás, el campo de texto debe mostrar el
   texto que tenía anteriormente.
 
 ### 7. **BONUS: Mejoras visuales**
 
-Para terminar, podéis realizar algunas mejoras visuales del ejercicio. Por ejemplo:
+Para terminar, podemos realizar algunas mejoras visuales del ejercicio. Por ejemplo:
 
-- Poner bonita tu web y agregar el estilo que desees.
+- Poner bonita nuestra web y agregar el estilo que se desee.
 - Agregar iconos a la información que se muestre en el detalle de las escenas.
 - Usar algún sistema de grid para pintar el listado.
 - Que funcione bien el responsive en dispositivos pequeños.
 
 ### 8. **BONUS: URL compatible**
 
-Como ejercicio extra os proponemos que la URL del detalle de cada escena sea compatible, es decir,
+Como ejercicio extra se propone que la URL del detalle de cada escena sea compatible, es decir,
 que si visitamos esa URL directamente en el navegador se vea el detalle de la escena de una película.
 
 Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el
 detalle de la película, solo si está almacenado en el local storage.
 
-Y en el caso de que el usuario navegue a una URL inexistente como por ejemplo
+Y en el caso de que la usuaria navegue a una URL inexistente como, por ejemplo,
 **_http://localhost:3000/detail/12345_** (el id 12345 no existe) debemos mostrar un mensaje
 del tipo **_"La escena que buscas no existe"_**
 
 ### 9. **BONUS: Ordenación**
 
-Un extra interesante sería que ordenáseis el listado de escenas alfabéticamente por el nombre de la
+Un extra interesante sería que se ordenara el listado de escenas alfabéticamente por el nombre de la
 película.
 
 ---
