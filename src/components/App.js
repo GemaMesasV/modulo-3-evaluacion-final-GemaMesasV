@@ -3,6 +3,7 @@ import '../styles/Reset.scss';
 import { useEffect, useState } from 'react';
 // import { Route, Routes } from 'react-router-dom';
 // import { matchPath, useLocation } from 'react-router';
+import MovieSceneList from './MovieSceneList'
 
 // Función para quitar valores repetidos
 function onlyUnique(value, index, self) {
@@ -85,18 +86,7 @@ if(filterMovieYear) {
       </select>
       </fieldset>
       </div>
-
-      <ul className='movie_list'>
-      {filteredMovieList.map(movie => (
-        <li className='movie_list_item'>
-          <img className='movie_poster' src={movie.poster} alt={movie.movie} />
-          {movie.movie}
-          {movie.year}
-          {movie.full_line}
-        </li>
-      ))}
-      </ul>
-    
+      <MovieSceneList movieList={filteredMovieList}/>
     </div>
   );
 }
