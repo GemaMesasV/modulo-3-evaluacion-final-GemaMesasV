@@ -16,8 +16,14 @@
   }
 }
 
-.filter_box {
-  font-size: 15px;
-  border: solid 1px gray;
-  padding: 5px 10px;
+
+.filter {
+  display: flex;
+  align-items: center;
+
+  &_box {
+    font-size: 15px;
+    border: solid 1px gray;
+    padding: 5px 10px;
+  }
 }

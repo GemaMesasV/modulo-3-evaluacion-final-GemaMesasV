@@ -4,11 +4,19 @@ import { useEffect, useState } from 'react';
 // import { Route, Routes } from 'react-router-dom';
 // import { matchPath, useLocation } from 'react-router';
 
+// Función para quitar valores repetidos
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
+}
 
 function App(props) {
 
   const [dataMovies, setDataMovies] = useState([]);
   const [filterMovie, setFilterMovie] = useState("");
+  const [filterMovieYear, setFilterMovieYear] = useState("");
+
+  const yearList = dataMovies.map(movie => movie.year).filter(onlyUnique).sort()
+  let filteredMovieList = dataMovies
 
   // Fetch
   useEffect(() => {
@@ -19,18 +27,30 @@ function App(props) {
       });
   }, []);
 
+
 // Función para buscar por película
-  function handleChange(e) {
+  function handleChangeTitle(e) {
     setFilterMovie(e.target.value);
 }
 
-// Filtro por nombre de película
+// Función para buscar por película
+function handleChangeYear(e) {
+  setFilterMovieYear(e.target.value);
+}
 
-const filterMovieItem = dataMovies.filter((movie) => movie.movie.toLowerCase().includes(filterMovie.toLowerCase()));
+//Aplicamos filtros
+if(filterMovie) {
+  filteredMovieList = filteredMovieList.filter((movie) => movie.movie.toLowerCase().includes(filterMovie.toLowerCase()));
+}
+
+if(filterMovieYear) {
+  filteredMovieList = filteredMovieList.filter((movie) => parseInt(filterMovieYear) === movie.year);
+}
 
   return (
     <div>
       <h1>Owen Wilson "wow"</h1>
+      <div className='filter'>
       <fieldset>
         <label className='filter_box' htmlFor='name'>Movie</label>
         <input
@@ -39,13 +59,35 @@ const filterMovieItem = dataMovies.filter((movie) => movie.movie.toLowerCase().i
           name='text'
           id='name'
           placeholder='E.g.: Marmaduke'
-          onChange={handleChange}
+          onChange={handleChangeTitle}
           value={filterMovie}
         />
       </fieldset>
 
+      <fieldset>
+      <label className='filter_box' htmlFor='year'> Year </label>
+      <select className='filter_box'
+        name='year'
+        id='year'
+        onChange={handleChangeYear}
+        value={filterMovieYear}
+      >
+        <option
+          value=''>
+            All
+        </option>
+        {yearList.map(year => (
+          <option
+            value={year}>
+              {year}
+          </option>
+        ))}
+      </select>
+      </fieldset>
+      </div>
+
       <ul className='movie_list'>
-      {filterMovieItem.map(movie => (
+      {filteredMovieList.map(movie => (
         <li className='movie_list_item'>
           <img className='movie_poster' src={movie.poster} alt={movie.movie} />
           {movie.movie}
