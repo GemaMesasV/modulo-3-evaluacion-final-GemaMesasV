@@ -1,9 +1,10 @@
 import '../styles/App.scss';
 import '../styles/Reset.scss';
 import { useEffect, useState } from 'react';
-// import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import { matchPath, useLocation } from 'react-router';
 import MovieSceneList from './MovieSceneList';
+import MovieSceneDetail from './MovieSceneDetail';
 
 // Función para quitar valores repetidos
 function onlyUnique(value, index, self) {
@@ -47,7 +48,7 @@ if(filterMovie) {
 if(filterMovieYear) {
   filteredMovieList = filteredMovieList.filter((movie) => parseInt(filterMovieYear) === movie.year);
 }
-
+console.log(dataMovies);
   return (
     <div>
       <h1>Owen Wilson "wow"</h1>
@@ -86,7 +87,18 @@ if(filterMovieYear) {
       </select>
       </fieldset>
       </div>
-      <MovieSceneList movieList={filteredMovieList}/>
+      <Routes>
+        <Route
+            path=''
+            element={
+              <MovieSceneList movieList={filteredMovieList}/>
+            }
+          />
+          <Route
+            path='/detail/:movieTitle'
+            element={<MovieSceneDetail movieList={filteredMovieList}/>}
+          />
+      </Routes>
     </div>
   );
 }
