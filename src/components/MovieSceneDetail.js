@@ -9,31 +9,36 @@ function MovieSceneDetail(props) {
 
 	const movie = movieList.find(movie => movie.movie === movieTitle)
 
+	if(movieList.length === 0) {
+		return <div>Loading...</div>
+	}
 
 	return (
 		<section>
 			<img
-				className=''
-				src=""
-				alt=""
+				className="movie_poster"
+				src={movie.poster}
+				alt={movie.movie}
 				title='poster'
 			/>
 			<section>
 				<div>
 					<h2>{movie.movie}</h2>
-					<h3>by director</h3>
+					<h3>by {movie.director}</h3>
 
-					<p>frase peli</p>
+					<p>{movie.full_line}</p>
 				</div>
 				<nav>
 					<Link to={'/'}>
-						<p className='movieScene__linkHome'> Volver al listado de pelis</p>
+					<button>
+						<p className='movieScene__linkHome'> Back to the movie list</p>
+					</button>
 					</Link>
 
 					<button>
 						<a
 							className=''
-							href=""
+							href={movie.audio}
 							target='_blank'
 							rel='noreferrer'
 						>
