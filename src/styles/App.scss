@@ -1,0 +1,23 @@
+.movie_poster {
+  width: 200px;
+}
+
+.movie_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.filter_box {
+  font-size: 15px;
+  border: solid 1px gray;
+  padding: 5px 10px;
+}
