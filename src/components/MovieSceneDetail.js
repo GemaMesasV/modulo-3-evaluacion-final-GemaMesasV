@@ -15,6 +15,7 @@ function MovieSceneDetail(props) {
 	}
 
 	return (
+		<div className='movie-container'>
 		<section className='movie-card'>
 			<img
 				className="movie-card__poster"
@@ -22,33 +23,34 @@ function MovieSceneDetail(props) {
 				alt={movie.movie}
 				title='poster'
 			/>
-			<section className='movie-info'>
+			<section className='movie-section'>
 				<div>
-					<h2 className='movie-title'>{movie.movie}</h2>
-					<h3 className='movie-director'>by {movie.director}</h3>
+					<h2 className='movie-section__title'>{movie.movie}</h2>
+					<h3 className='movie-section__director'>by {movie.director}</h3>
 
-					<p className='movie-line'>{movie.full_line}</p>
+					<p className='movie-section__line'>{movie.full_line}</p>
 				</div>
-				<nav>
+				<nav className='nav-menu'>
 					<Link to={'/'}>
-					<button>
-						<p className='movieScene__linkHome'> Back to the movie list</p>
+					<button className='btn'>
+						<p className='back-message'> Back to the wovie list</p>
 					</button>
 					</Link>
 
-					<button>
+					<button className='btn'>
 						<a
-							className=''
+							className='audio-message'
 							href={movie.audio}
 							target='_blank'
 							rel='noreferrer'
 						>
-							Audio
+							Waudio
 						</a>
 					</button>
 				</nav>
 			</section>
 		</section>
+		</div>
 	);
 }
 

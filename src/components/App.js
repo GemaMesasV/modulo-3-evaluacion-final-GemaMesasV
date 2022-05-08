@@ -71,7 +71,7 @@ function App(props) {
           element={
             <>
               <header className="header">
-              <h1 className="header__title">Owen Wilson "Wow"</h1>
+              <h1 className="header__title">The Wowenator</h1>
               <img className="header__logo" src={header} alt="Imagen de portada" />
                 <MovieFilters
                   filterMovie={filterMovieTitle}

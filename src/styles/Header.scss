@@ -5,15 +5,13 @@
     align-items: center;
   
     &__title {
-      font-size: 70px;
+      font-size: 90px;
+      font-weight: 900;
       color: rgb(72, 68, 68);
       margin: 30px 30px 15px 30px;
     }
   
     &__logo {
-      margin-bottom: 5px;
-      padding: 10px;
-      width: 60%;
       border: rgb(72, 68, 68) 5px dotted;
       margin-bottom: 30px;
     }
