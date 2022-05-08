@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
 
+
 function MovieSceneDetail(props) {
 
 	const {movieTitle} = useParams();
@@ -14,19 +15,19 @@ function MovieSceneDetail(props) {
 	}
 
 	return (
-		<section>
+		<section className='movie-card'>
 			<img
-				className="movie__list-item-poster"
+				className="movie-card__poster"
 				src={movie.poster}
 				alt={movie.movie}
 				title='poster'
 			/>
-			<section>
+			<section className='movie-info'>
 				<div>
-					<h2>{movie.movie}</h2>
-					<h3>by {movie.director}</h3>
+					<h2 className='movie-title'>{movie.movie}</h2>
+					<h3 className='movie-director'>by {movie.director}</h3>
 
-					<p>{movie.full_line}</p>
+					<p className='movie-line'>{movie.full_line}</p>
 				</div>
 				<nav>
 					<Link to={'/'}>

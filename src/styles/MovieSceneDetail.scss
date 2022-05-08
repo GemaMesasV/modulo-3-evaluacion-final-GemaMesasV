@@ -1,0 +1,42 @@
+.movie-card {
+  background-color: #fff;
+  border: rgb(72, 68, 68) 4px dotted;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 150px;
+  width: 80%;
+}
+
+.movie-card__poster {
+  width: 300px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 5px 10px;
+    margin-left: 50px;
+}
+.movie-title {
+  font-size: 60px;
+  color: rgb(72, 68, 68);
+}
+
+.movie-director {
+  font-size: 30px;
+  margin-top: 10px;
+  color: rgb(72, 68, 68);
+}
+
+.movie-line {
+  font-size: 40px;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 10px;
+  color: black;
+}

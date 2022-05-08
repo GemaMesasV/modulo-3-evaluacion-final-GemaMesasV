@@ -1,6 +1,7 @@
 import "../styles/App.scss";
 import "../styles/Reset.scss";
 import "../styles/Header.scss";
+import "../styles/MovieSceneDetail.scss";
 
 import header from '../images/header.jpg';
 
