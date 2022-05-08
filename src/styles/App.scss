@@ -1,29 +1,57 @@
 body {
-  // background-image: url("../images/background.gif"); 
-  // background-position: center 25%; 
-  // background-size: auto; 
-
+  background-image: url("../images/background.gif");
+  background-position: center 25%;
+  background-size: auto;
 }
 
-
-
-.movie_poster {
-  width: 200px;
-}
-
-.movie_list {
+.movie__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
   grid-auto-rows: minmax(100px, auto);
 
-  &_item {
+  &-item {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    &-card {
+      background-color: white;
+      border: rgb(72, 68, 68) 4px dotted;
+      display: flex;
+      flex-direction: column;
+      font-size:20px;
+      font-weight: 700;
+      height: 95%;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px;
+      padding: 10px;
+      width: 90%;
+    }
+
+    &-poster {
+      width: 200px;
+    }
+
+    &-title {
+      font-weight: 700;
+      color: rgb(72, 68, 68);
+    }
+
+    &-year {
+      font-weight: 400;
+      color: rgb(72, 68, 68);
+    }
+
+    &-line {
+      font-weight: 300;
+      color: black;
+    }
   }
 }
+
 
 
 .filter {

@@ -5,7 +5,7 @@ function MovieSceneList(props) {
 		
 	}
   return (
-    <ul className="movie_list">
+    <ul className="movie__list">
       {props.movieList.map((movie) => (
         <MovieSceneItem movie={movie}/>
       ))}

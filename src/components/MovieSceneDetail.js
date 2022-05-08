@@ -16,7 +16,7 @@ function MovieSceneDetail(props) {
 	return (
 		<section>
 			<img
-				className="movie_poster"
+				className="movie__list-item-poster"
 				src={movie.poster}
 				alt={movie.movie}
 				title='poster'
