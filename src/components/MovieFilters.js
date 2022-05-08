@@ -12,7 +12,7 @@ function MovieFilters(props) {
     <div className="filter">
       <fieldset>
         <label className="filter_box" htmlFor="name">
-          Movie
+          Movie:
         </label>
         <input
           className="filter_box"
@@ -28,7 +28,7 @@ function MovieFilters(props) {
       <fieldset>
         <label className="filter_box" htmlFor="year">
           {" "}
-          Year{" "}
+          Year:{" "}
         </label>
         <select
           className="filter_box"

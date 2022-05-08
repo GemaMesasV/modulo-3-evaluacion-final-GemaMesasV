@@ -1,5 +1,8 @@
 import "../styles/App.scss";
 import "../styles/Reset.scss";
+import "../styles/Header.scss";
+
+import header from '../images/header.jpg';
 
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -17,7 +20,9 @@ function onlyUnique(value, index, self) {
 
 function App(props) {
   const [dataMovies, setDataMovies] = useState([]);
-  const [filterMovieTitle, setFilterMovieTitle] = useState(localStorage.get("filterMovieTitle", ""));
+  const [filterMovieTitle, setFilterMovieTitle] = useState(
+    localStorage.get("filterMovieTitle", "")
+  );
   const [filterMovieYear, setFilterMovieYear] = useState("");
   const yearList = dataMovies
     .map((movie) => movie.year)
@@ -36,7 +41,7 @@ function App(props) {
 
   // Función para buscar por película
   function handleChangeTitle(e) {
-    localStorage.set("filterMovieTitle", e.target.value)
+    localStorage.set("filterMovieTitle", e.target.value);
     setFilterMovieTitle(e.target.value);
   }
 
@@ -59,22 +64,27 @@ function App(props) {
   }
   return (
     <div>
-      <h1>Owen Wilson "wow"</h1>
       <Routes>
         <Route
           path=""
-          element={(
+          element={
             <>
-              <MovieFilters
-                filterMovie={filterMovieTitle}
-                filterMovieYear={filterMovieYear}
-                yearList={yearList}
-                handleChangeTitle={handleChangeTitle}
-                handleChangeYear={handleChangeYear}
-              />
-              <MovieSceneList movieList={filteredMovieList} />
+              <header className="header">
+              <h1 className="header__title">Owen Wilson "wow"</h1>
+              <img className="header__logo" src={header} alt="Imagen de portada" />
+                <MovieFilters
+                  filterMovie={filterMovieTitle}
+                  filterMovieYear={filterMovieYear}
+                  yearList={yearList}
+                  handleChangeTitle={handleChangeTitle}
+                  handleChangeYear={handleChangeYear}
+                />
+              </header>
+              <main>
+                <MovieSceneList movieList={filteredMovieList} />
+              </main>
             </>
-          )}
+          }
         />
         <Route
           path="/detail/:movieTitle"
