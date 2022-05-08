@@ -3,7 +3,7 @@ import "../styles/Reset.scss";
 import "../styles/Header.scss";
 import "../styles/MovieSceneDetail.scss";
 
-import header from '../images/header.jpg';
+import header from "../images/header.jpg";
 
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
@@ -71,8 +71,12 @@ function App(props) {
           element={
             <>
               <header className="header">
-              <h1 className="header__title">The Wowenator</h1>
-              <img className="header__logo" src={header} alt="Imagen de portada" />
+                <h1 className="header__title">The Wowenator</h1>
+                <img
+                  className="header__logo"
+                  src={header}
+                  alt="Imagen de portada"
+                />
                 <MovieFilters
                   filterMovie={filterMovieTitle}
                   filterMovieYear={filterMovieYear}

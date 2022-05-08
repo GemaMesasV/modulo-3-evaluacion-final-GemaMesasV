@@ -1,6 +1,6 @@
 .movie-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .movie-card {
@@ -13,60 +13,58 @@
   align-items: center;
   margin-top: 150px;
   width: 80%;
-}
 
-.movie-card__poster {
-  width: 300px;
+  &__poster {
+    width: 300px;
+  }
 }
 
 .movie-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 5px 10px;
-    margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 5px 10px;
+  margin-left: 50px;
 
-    &__title {
-        font-size: 60px;
-        color: rgb(72, 68, 68);
-      }
-      
-      &__director {
-        font-size: 30px;
-        margin-top: 10px;
-        color: rgb(72, 68, 68);
-      }
-      
-      &__line {
-        font-size: 40px;
-        font-weight: 300;
-        font-style: italic;
-        margin-top: 10px;
-        color: black;
-      }
+  &__title {
+    font-size: 60px;
+    color: rgb(72, 68, 68);
+  }
+
+  &__director {
+    font-size: 30px;
+    margin-top: 10px;
+    color: rgb(72, 68, 68);
+  }
+
+  &__line {
+    font-size: 40px;
+    font-weight: 300;
+    font-style: italic;
+    margin-top: 10px;
+    color: black;
+  }
 }
-
 
 .nav-menu {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
-
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
 }
 .btn {
-    background-color: rgb(72, 68, 68);;
-    border: white 4px dotted;
-    cursor: pointer;
-    padding: 20px 15px;
+  background-color: rgb(72, 68, 68);
+  border: white 4px dotted;
+  cursor: pointer;
+  padding: 20px 15px;
 }
 
 .back-message {
-    font-size: 20px;
-    color: white;
+  font-size: 20px;
+  color: white;
 }
 
 .audio-message {
-    font-size: 20px;
-    color: white;
+  font-size: 20px;
+  color: white;
 }

@@ -1,18 +1,18 @@
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  
-    &__title {
-      font-size: 90px;
-      font-weight: 900;
-      color: rgb(72, 68, 68);
-      margin: 30px 30px 15px 30px;
-    }
-  
-    &__logo {
-      border: rgb(72, 68, 68) 5px dotted;
-      margin-bottom: 30px;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 90px;
+    font-weight: 900;
+    color: rgb(72, 68, 68);
+    margin: 30px 30px 15px 30px;
   }
+
+  &__logo {
+    border: rgb(72, 68, 68) 5px dotted;
+    margin-bottom: 30px;
+  }
+}

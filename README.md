@@ -87,31 +87,11 @@ detalle aparecerá:
 Para terminar, podemos realizar algunas mejoras visuales del ejercicio. Por ejemplo:
 
 - Poner bonita nuestra web y agregar el estilo que se desee.
-- Agregar iconos a la información que se muestre en el detalle de las escenas.
 - Usar algún sistema de grid para pintar el listado.
-- Que funcione bien el responsive en dispositivos pequeños.
-
-### 8. **BONUS: URL compatible**
-
-Como ejercicio extra se propone que la URL del detalle de cada escena sea compatible, es decir,
-que si visitamos esa URL directamente en el navegador se vea el detalle de la escena de una película.
-
-Si refrescamos el navegador en el detalle de una escena de la película debe volver a mostrar el
-detalle de la película, solo si está almacenado en el local storage.
-
-Y en el caso de que la usuaria navegue a una URL inexistente como, por ejemplo,
-**_http://localhost:3000/detail/12345_** (el id 12345 no existe) debemos mostrar un mensaje
-del tipo **_"La escena que buscas no existe"_**
-
-### 9. **BONUS: Ordenación**
-
-Un extra interesante sería que se ordenara el listado de escenas alfabéticamente por el nombre de la
-película.
+- Que funcione bien el responsive en dispositivos más pequeños.
 
 ---
 
-
----
 
 #### Este proyecto ha sido desarrollado con:
 

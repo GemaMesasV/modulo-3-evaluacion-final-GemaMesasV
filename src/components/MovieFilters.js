@@ -1,12 +1,11 @@
 function MovieFilters(props) {
-
-	const {
-		filterMovie, 
-		filterMovieYear, 
-		yearList, 
-		handleChangeTitle, 
-		handleChangeYear 
-	}	= props
+  const {
+    filterMovie,
+    filterMovieYear,
+    yearList,
+    handleChangeTitle,
+    handleChangeYear,
+  } = props;
 
   return (
     <div className="filter">

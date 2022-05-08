@@ -1,9 +1,9 @@
-import React from 'react';
-import { HashRouter } from 'react-router-dom';
-import ReactDOM from 'react-dom/client';
-import App from './components/App';
+import React from "react";
+import { HashRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import App from "./components/App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   <HashRouter>
@@ -11,4 +11,3 @@ root.render(
   </HashRouter>
   // </React.StrictMode>
 );
-

@@ -1,13 +1,12 @@
-import MovieSceneItem from './MovieSceneItem';
+import MovieSceneItem from "./MovieSceneItem";
 function MovieSceneList(props) {
-	if (props.movieList.length=== 0) {
-		return (<p>Oops! There is not movie with that name!</p>)
-		
-	}
+  if (props.movieList.length === 0) {
+    return <p>Oops! There is not movie with that name!</p>;
+  }
   return (
     <ul className="movie__list">
       {props.movieList.map((movie) => (
-        <MovieSceneItem movie={movie}/>
+        <MovieSceneItem movie={movie} />
       ))}
     </ul>
   );
