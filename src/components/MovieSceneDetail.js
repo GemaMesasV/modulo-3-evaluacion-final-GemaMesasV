@@ -8,7 +8,7 @@ function MovieSceneDetail(props) {
   const movie = movieList.find((movie) => movie.movie === movieTitle);
 
   if (movieList.length === 0) {
-    return <div>Loading...</div>;
+    return <div>Woading...</div>;
   }
 
   return (
@@ -30,7 +30,7 @@ function MovieSceneDetail(props) {
           <nav className="nav-menu">
             <Link to={"/"}>
               <button className="btn">
-                <p className="back-message"> Back to the wovie list</p>
+                <p className="back-message"> ⬅️ Wack to the wovie list</p>
               </button>
             </Link>
 
@@ -41,7 +41,7 @@ function MovieSceneDetail(props) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Waudio
+                🎧 Waudio
               </a>
             </button>
           </nav>
