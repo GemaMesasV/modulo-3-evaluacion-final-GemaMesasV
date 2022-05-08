@@ -1,7 +1,9 @@
 import MovieSceneItem from "./MovieSceneItem";
 function MovieSceneList(props) {
   if (props.movieList.length === 0) {
-    return <p>Oops! There is not movie with that name!</p>;
+    return (
+      <p className="error-message">Woops! There is not wovie with that wame!</p>
+    );
   }
   return (
     <ul className="movie__list">
