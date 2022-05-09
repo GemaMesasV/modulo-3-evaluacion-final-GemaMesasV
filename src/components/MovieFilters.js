@@ -2,6 +2,8 @@ function MovieFilters(props) {
   const {
     filterMovie,
     filterMovieYear,
+    filterMovieCharacter,
+    handleChangeCharacter,
     yearList,
     handleChangeTitle,
     handleChangeYear,
@@ -21,6 +23,21 @@ function MovieFilters(props) {
           placeholder="E.g.: Marmaduke"
           onChange={handleChangeTitle}
           value={filterMovie}
+        />
+      </fieldset>
+
+      <fieldset>
+        <label className="filter_box" htmlFor="character">
+          Wharacter:
+        </label>
+        <input
+          className="filter_box"
+          type="text"
+          name="text"
+          id="character"
+          placeholder="E.g.: Brian Fee"
+          onChange={handleChangeCharacter}
+          value={filterMovieCharacter}
         />
       </fieldset>
 

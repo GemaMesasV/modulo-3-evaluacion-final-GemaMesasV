@@ -24,6 +24,9 @@ function App(props) {
   const [filterMovieTitle, setFilterMovieTitle] = useState(
     localStorage.get("filterMovieTitle", "")
   );
+  const [filterMovieCharacter, setFilterMovieCharacter] = useState(
+    localStorage.get("filterMovieTitle", "")
+  );
   const [filterMovieYear, setFilterMovieYear] = useState("");
   const yearList = dataMovies
     .map((movie) => movie.year)
@@ -46,7 +49,13 @@ function App(props) {
     setFilterMovieTitle(e.target.value);
   }
 
-  // Función para buscar por película
+   // Función para buscar por personaje
+   function handleChangeCharacter(e) {
+    localStorage.set("filterMovieTitle", e.target.value);
+    setFilterMovieCharacter(e.target.value);
+  }
+
+  // Función para buscar por año
   function handleChangeYear(e) {
     setFilterMovieYear(e.target.value);
   }
@@ -55,6 +64,12 @@ function App(props) {
   if (filterMovieTitle) {
     filteredMovieList = filteredMovieList.filter((movie) =>
       movie.movie.toLowerCase().includes(filterMovieTitle.toLowerCase())
+    );
+  }
+
+  if (filterMovieCharacter) {
+    filteredMovieList = filteredMovieList.filter((movie) =>
+      movie.character.toLowerCase().includes(filterMovieCharacter.toLowerCase())
     );
   }
 
@@ -80,6 +95,8 @@ function App(props) {
                 <MovieFilters
                   filterMovie={filterMovieTitle}
                   filterMovieYear={filterMovieYear}
+                  filterMovieCharacter={filterMovieCharacter}
+                  handleChangeCharacter={handleChangeCharacter}
                   yearList={yearList}
                   handleChangeTitle={handleChangeTitle}
                   handleChangeYear={handleChangeYear}
